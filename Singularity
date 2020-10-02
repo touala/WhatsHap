@@ -7,7 +7,7 @@ For more information, please consult https://github.com/touala/WhatsHap
 # Install dependencies
 %post
     # Install basic dependencies
-    dnf check-update && dnf upgarde -y && dnf install -y \
+    dnf check-update && dnf upgrade -y && dnf install -y \
         "langpacks-en" \
         "glibc-all-langpacks"
 
