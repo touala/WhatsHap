@@ -5,13 +5,22 @@ set -ex
 curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 sh Miniconda3-latest-Linux-x86_64.sh -b
 rm -rf Miniconda3-latest-Linux-x86_64.sh
-echo -e "\n"'export PATH=$PATH:/root/miniconda/bin' >> ~/.bash_profile
-export PATH=$PATH:/root/miniconda/bin
+echo -e "\n"'export PATH=$PATH:/root/miniconda/bin' >> /root/.bash_profile
+export PATH=$PATH:/root/miniconda3/bin
 
-source /root/.bash_profile
-conda config --set auto_activate_base false
+# conda config --set auto_activate_base false
 conda init bash
+
+# Update conda
+conda update -n base -c defaults conda
 
 # Install WhatsHap
 conda install -y -c conda-forge mamba
 mamba create -y -c conda-forge -c bioconda -n whatshap whatshap nomkl
+
+# Add to PATH with conda activation
+echo -e '\nconda activate whatshap' >> /root/.bash_profile # Set default conda environment
+touch /usr/local/bin/whatshap
+chmod 755 /usr/local/bin/whatshap
+echo -e '#!/bin/bash\n\nsource ~/.bash_profile\n\nwhatshap $@\n' > /usr/local/bin/whatshap
+
