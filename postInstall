@@ -5,7 +5,7 @@ set -ex
 curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 sh Miniconda3-latest-Linux-x86_64.sh -b
 rm -rf Miniconda3-latest-Linux-x86_64.sh
-echo -e "\n"'export PATH=$PATH:/root/miniconda/bin' >> /root/.bash_profile
+echo -e "\n"'export PATH=$PATH:/root/miniconda3/bin' >> /root/.bash_profile
 export PATH=$PATH:/root/miniconda3/bin
 
 # conda config --set auto_activate_base false
