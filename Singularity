@@ -24,3 +24,9 @@ For more information, please consult https://github.com/touala/WhatsHap
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]WhatsHap:\[\033[33;1m\]\w\[\033[m\]$ "
 SINGULARITY_SHELL=/bin/bash
 EOF
+
+%environment
+    export HOME=/root
+
+%runscript
+    exec /bin/bash
