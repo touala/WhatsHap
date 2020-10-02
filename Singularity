@@ -17,12 +17,14 @@ For more information, please consult https://github.com/touala/WhatsHap
     rm -rf Miniconda3-latest-Linux-x86_64.sh
     echo -e "\n"'export PATH=$PATH:/root/miniconda/bin' >> ~/.bash_profile
     export PATH=$PATH:/root/miniconda/bin
+    source /root/.bashrc
+    source /root/.bash_profile
     conda config --set auto_activate_base false
     conda init bash
     
     # Install WhatsHap
     conda install -y -c conda-forge mamba
-	  mamba create -y -c conda-forge -c bioconda -n whatshap whatshap nomkl
+    mamba create -y -c conda-forge -c bioconda -n whatshap whatshap nomkl
 
     # Set default behavior
     cat > /.singularity.d/env/99-custom.sh <<EOF
