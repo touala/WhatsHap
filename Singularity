@@ -13,12 +13,12 @@ For more information, please consult https://github.com/touala/WhatsHap
 
     # Install and setup conda
     curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-	  sh Miniconda3-latest-Linux-x86_64.sh -b
-	  rm -rf Miniconda3-latest-Linux-x86_64.sh
-	  echo -e "\n"'export PATH=$PATH:/root/miniconda/bin' >> ~/.bash_profile
-	  export PATH=$PATH:/root/miniconda/bin
-	  conda config --set auto_activate_base false
-	  conda init bash
+    sh Miniconda3-latest-Linux-x86_64.sh -b
+    rm -rf Miniconda3-latest-Linux-x86_64.sh
+    echo -e "\n"'export PATH=$PATH:/root/miniconda/bin' >> ~/.bash_profile
+    export PATH=$PATH:/root/miniconda/bin
+    conda config --set auto_activate_base false
+    conda init bash
     
     # Install WhatsHap
     conda install -y -c conda-forge mamba
