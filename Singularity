@@ -26,7 +26,7 @@ SINGULARITY_SHELL=/bin/bash
 EOF
 
 %environment
-    export HOME=/root
+    export HOME=/home
 
 %runscript
     exec /bin/bash
