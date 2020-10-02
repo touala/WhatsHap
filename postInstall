@@ -8,11 +8,10 @@ rm -rf Miniconda3-latest-Linux-x86_64.sh
 echo -e "\n"'export PATH=$PATH:/root/miniconda3/bin' >> /root/.bash_profile
 export PATH=$PATH:/root/miniconda3/bin
 
-# conda config --set auto_activate_base false
-conda init bash
-
 # Update conda
 conda update -n base -c defaults conda
+conda config --set auto_activate_base false
+conda init bash
 
 # Install WhatsHap
 conda install -y -c conda-forge mamba
