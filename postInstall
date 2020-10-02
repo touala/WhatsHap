@@ -22,5 +22,4 @@ mamba create -y -c conda-forge -c bioconda -n whatshap whatshap nomkl
 echo -e '\nconda activate whatshap' >> /root/.bash_profile # Set default conda environment
 touch /usr/local/bin/whatshap
 chmod 755 /usr/local/bin/whatshap
-echo -e '#!/bin/bash\n\nsource ~/.bash_profile\n\nwhatshap $@\n' > /usr/local/bin/whatshap
-
+echo -e '#!/bin/bash\n\nsource /root/.bash_profile\n\nwhatshap $@\n' > /usr/local/bin/whatshap
